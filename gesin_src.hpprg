@@ -1,0 +1,751 @@
+´ :2: 1605 DUP DETACH PURGE ª EVAL
+
+DIR
+
+
+  INICIARGESIN
+    ´ CKDR
+    {-2 -19 -72 -73 -74 -80 -82 -90 -117 -81} SF    
+    -40 CF
+    0 'zx' STO 1 'OPC' STO
+      DO CLLCD
+      "Generadores SÌncronos"
+      {
+      { "1.- Resolver" 1}
+      { "2.- OCC y SCC " 2 }
+      { "3.- Placa Caract. " 3 }
+      { "4.- Curvas Capacidad " 4 }
+      { "5.- Otras Curvas" 5 }
+      { "6.- D. Fasorial " 6 }
+      { "7.- Ajustes" 7 }
+      { "8.- Limpiar Variables" 8 }
+      { "9.- Salir del Programa" 9 }
+      }
+      OPC
+      CHOOSE IF THEN 'OPC' STO
+          CASE
+          OPC 1 == THEN MSOL 1 'OPC' STO END
+          OPC 2 == THEN ENS 2 'OPC' STO END
+          OPC 3 == THEN PC 3 'OPC' STO END
+          OPC 4 == THEN pc 3 GET NEG pc 3 GET ACOS SIN RçC 'A' STO
+          2.5 DUP 30 COS * SWAP 30 SIN * MCRc IM + RçC 'B' STO
+          CCAP 4 'OPC' STO END
+          OPC 5 == THEN MC 5 'OPC' STO END
+          OPC 6 == THEN DFAS 6 'OPC' STO END
+          OPC 7 == THEN AJT 7 'OPC' STO END
+          OPC 8 == THEN CLN 8 'OPC' STO END
+          END
+      ELSE 9 'OPC' STO END
+      UNTIL OPC 9 ==
+    END
+    { pc DATAI DATA2 ct OPC Vbase zx A B vft fc LB PPAR } PURGE 2 MENU         
+    ª
+
+   ABOUTGESIN
+   ´ PUSH {-2 -90} SF -40 CF
+   440 .5 BEEP   
+   GROB 131 80 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000383000000000000000000000000000009FFEF01000000000000000000000000008FEEFEF30000000000000000000000000040FBDFC700000000000000000000000000EF100879000000000000000000000000001FCC91FE10000000000000000000000008F0500D87300000000000000000000000062E8FF0187000000000000000000000000C22F8872C3000000000000000000000000839736F89300000000000000000000000081CF7FF3910000000000000000000000000BC100420100000000000000000000000003DA39372100000000000000000000000009C14C8641000000000000000000000000094CF7E221000000000000000000000000014FF7F5210000000000000000000000008C43088442000000000000000000000000826BF83D02000000000000000000000000886A7DBE6200000000000000000000000080EA3ED62100000000000000000000000005CA9E86110000000000000000000000000D4BC6A54100000000000000000000000009D3148E6100000000000000000000000001D2E2BB410000000000000000000000000289F8B980000000000000000000000000029DFCB4A0000000000000000000000000029A7E7780000000000000000000000000028B7C332100000000000000000000000009C3419221000000000000000000000000056A9EAF63000000000000000000000000877BC6BCC30000000000000000000000008F13E2BBD100000000000000000000000003F3F9BFF10000000000000000000000000FF7FCBFF100000000000000000000000007054380C10000000000000000000000000FFBFFFFF100000000000000000000000003810003810000000000000000000000000FFDFF7FF00000000000000000000000000203E781C00000000000000000000000000EFF93FFF00000000000000000000000000E8F38F7E00000000000000000000000000C3CFFF0700000000000000000000000000CFFFFFF700000000000000000000000000C30C7895000000000000000000000000008F108BF3000000000000000000000000000F0031C1000000000000000000000000000F13CEF0000000000000000000000000000C7ECF700000000000000000000000000008F89F300000000000000000000000000000FFFF100000000000000000000000000000CFF70000000000000000000000000000000FF0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+   PICT STO
+   PICT { #46d #2d } "LA UNIVERSIDAD" 0 çGROB GOR
+   PICT { #68d #11d } "DEL ZULIA" 0 çGROB GOR
+   PICT { #59d #26d } "GESIN v1.1" 0 çGROB GOR
+   PICT { #67d #34d } "Marzo 2017" 1 çGROB GOR
+   PICT { #55d #44d } " LUIS J. RODRIGUEZ " 1 çGROB GOR
+   PICT { #55d #51d } "luisjoserod96@gmail" 1 çGROB GOR
+   PICT { #55d #58d } "  +58 424-6222483" 1 çGROB GOR
+   PICT { #55d #65d } "" 1 çGROB GOR
+   PICT { #08d #65d } "EiE-LUZ" 0 çGROB GOR
+   { #54d #43d } { #130d #65d } BOX
+   { #0d #0d } PVIEW 0 WAIT DROP ERASE DEG POP
+   ª    
+    
+  CURV
+    ´
+    SWAP
+    DUP 'ÖDAT' STO
+    TRN AXL EVAL ´ ÖLIST ª 0
+     ç m x y ÖL m1
+      ´
+      m 1 + 'm1' STO
+      SCATRPLOT
+      DRAX
+      'ÖL(y)' EVAL
+        1 m FOR j
+        'ÖL(x^j*y)' EVAL
+        NEXT
+      {m1 1} çARRY
+      x SIZE
+        1 m FOR k
+        'ÖL(x^k)' EVAL
+        NEXT
+        m1 m 2 * FOR q
+        m DUPN
+        'ÖL(x^q)' EVAL
+        NEXT
+      {m1 m1} çARRY / 1
+        1 m FOR s
+        'X' s ^
+        NEXT
+      {1 m1} çARRY SWAP * 1 GET DUP STEQ
+      FUNCTION DRAW 
+      CASE
+      1 LB == THEN PPAR 3 '%Sn' PUT 7 'Vt' PUT 'PPAR' STO END
+      2 LB == THEN PPAR 3 '%If' PUT 7 'Ia' PUT 'PPAR' STO END
+      3 LB == THEN PPAR 3 'If' PUT 7 'Ea' PUT 'PPAR' STO END
+      PPAR 3 'If' PUT 7 'Ia' PUT 'PPAR' STO END                               
+      LABEL PICTURE {ZPAR PPAR} PURGE
+ª
+    ª
+    
+  CV
+    ´{-3 -2} CF 2 'LB' STO
+    "Potencia escogida"
+    {
+    { "Pcte" "Seleccione Pcte para la curva en V"  }
+    }
+    1
+    { }
+    { 150E6 }
+    INFORM
+    IF THEN EVAL pc 2 GET / 'Pcte' STO
+    pc 3 GET ABS NEG .05 + 'fpp' STO
+    {}
+    WHILE fpp 0 <
+    REPEAT
+    fpp 'fpp' .1 STO+ + DUP TEXT 1 DISP
+    END
+    DUP 'repeat' STO DUP DUP 1 + REVLIST + ABS 'fplist' STO ABS
+    ACOS NEG DUP 0 + REVLIST ABS + 'ïlist' STO Pcte fplist / 
+    DUP 'Ialist' STO 1 DISP
+    Ialist fplist * Ialist ïlist SIN * RçC DUP DUP 'Ialist' STO 1 DISP
+    i * Xspu * 1 ADD DUP 'Ealist' STO 1 DISP
+    'fp' repeat DUP ABS 1 + REVLIST + EVAL
+    'Ia' Ialist ABS EVAL
+    '%If' Ealist Eapu / 100 * ABS EVAL
+    'Ea' Ealist ABS EVAL
+    'í' Ealist ARG EVAL
+    5 fplist SIZE 1 + RçI 2 çLIST çARRY 2 FIX 0 çGROB SCROLL
+    {fpp ïlist fplist Pcte repeat Ealist Ialist } PURGE
+    END
+    ª
+            
+
+  CLN
+    ´ HOME
+    "LIMPIANDO DIR. TEMP..." 1 DISP
+    'GESIN~TEMP' PGDIR    
+ ª    
+
+  PC
+    ´
+    'pc' CKVR    
+    "Placa CaracterÌstica"
+    {
+    { "Vnom:" "Voltaje Nominal (V)"  }
+    { "Snom:" "Potencia Nominal en (VA)"  }
+    { "fp:" "-fp (atraso) Û +fp (adelanto) "  }
+    { "fe:" "frecuencia de trabajo (Hz)"  }
+    { "P:" "N˙mero Total de Polos"  }
+    { "Y-õ:" "Ingrese 1 para Y, 2 para Delta"  }
+    }
+    { 2 0 }
+    { 20E3 211.4E6 -0.85 60 2 1 }
+    pc    
+    INFORM IF THEN 'pc' STO END
+    ª 
+    
+    CCAP
+    ´ 2 FIX DEG { PPAR } PURGE ERASE
+    @ LÌmites X en pantalla
+    -2 2 XRNG
+    @ LÌmites Y en pantalla
+    PPAR 2. GET RE
+    PPAR 1. GET RE
+    - 131. / 40. *
+    DUP NEG SWAP YRNG
+    "TRAZANDO LOS EJES.." 1 DISP
+    (0,-1.22) (0,1.22) LINE
+    (-2,0) (2,0) LINE    
+    @MCE
+    "DIBUJANDO LG MCE..." 1 DISP   
+    (0,0) 1 270 90 ARC @centro arco
+    @MCR
+    "DIBUJANDO LG MCR...." 1 DISP   
+    0 MCRc IM RçC MCRr 30 110 ARC
+    (0,0) A LINE
+    (0,0) 0.25 0 pc 3 GET NEG ACOS ARC
+    "TRAZANDO LIMITE í=60∞....." 1 DISP   
+    0 MCRc IM RçC B LINE
+    @(.65,.17) CçPX PIXON
+    @ delta 60
+    0 MCRc IM RçC .25 30 90 ARC            
+    PICT { #20d #14d } "M.C.Rç" 1 çGROB GOR   
+    PICT { #2d #58d } "Sbase_MVA:" 1 çGROB GOR
+    PICT { #2d #64d } pc 2 GET 1E6 / çSTR "  " SWAP + 1 çGROB GOR                 
+    PICT RCL (1.8,-.1) "P" 1 çGROB REPL (-.18, 1.15) "Q" 1 çGROB REPL
+    MCRc .61 - (.2,Ä90) + "í=60∞" 1 çGROB REPL
+    A 2 / (.02,.07) - "ï" 1 çGROB REPL        
+    (.97,-.5) "éM.C.E" 1 çGROB REPL
+    {#0d #0d} "CCAP" 0 çGROB REPL         
+    PICT STO 
+    { #1d #57d } { #42d #70d } BOX    
+    PICTURE 'PPAR' PURGE
+    ª
+    
+    DFAS
+    ´ CYLIN 4 ENG
+      IF zx 1 == THEN
+      1 'Vtpu' STO
+      ELSE
+      Iapu Zlpu * ABS 'Vtpu' STO
+      END
+    DEG { PPAR } PURGE
+      CASE
+      Eapu ABS 2.3 > THEN 400 RçB 200 RçB PDIM
+      (0,0) Eapu  LINE
+      (0,0) Vtpu 0 RçC LINE
+      Vtpu 0 RçC Eapu LINE
+      (0,0) Iapu LINE
+      PICT Iapu (-0.5,-0.11) + "Ia:" Iapu Ibase * " " + + 1 çGROB GOR
+      PICT Eapu (-0.5,+0.20) + "Ea¯:" Eaph " " + + 1 çGROB GOR
+      PICT Vtpu (-0.5,-0.08) + "V¯:" Vph " " + + 1 çGROB GOR
+      PICT Eapu ABS í COS * 1 - 2 / 1 + Eapu ABS í SIN 2 / * RçC
+      (+0.05,0) + "jXsIa:" i Xspu * Iapu * " " + + 1 çGROB GOR
+      PICTURE
+      END
+      Eapu ABS 1.8 > THEN 1000 RçB 500 RçB PDIM
+      (0,0) Eapu  LINE
+      (0,0) Vtpu 0 RçC LINE
+      Vtpu 0 RçC Eapu LINE
+      (0,0) Iapu LINE
+      PICT Iapu (-0.5,-0.11) + "Ia:" Iapu Ibase * " " + + 1 çGROB GOR
+      PICT Eapu (-0.5,+0.20) + "Ea¯:" Eaph " " + + 1 çGROB GOR
+      PICT Vtpu (-0.5,-0.08) + "V¯:" Vph " " + + 1 çGROB GOR
+      PICT Eapu ABS í COS * 1 - 2 / 1 + Eapu ABS í SIN 2 / * RçC
+      (+0.05,0) + "jXsIa:" i Xspu * Iapu * " " + + 1 çGROB GOR
+      PICTURE
+      END
+    1000 RçB 500 RçB PDIM
+    (0,0) Eapu  LINE
+    (0,0) Vtpu 0 RçC LINE
+    Vtpu 0 RçC Eapu LINE
+    (0,0) Iapu LINE
+    PICT Iapu (-0.5,-0.11) + "Ia:" Iapu Ibase * " " + + 1 çGROB GOR
+    PICT Eapu (-0.5,+0.20) + "Ea¯:" Eaph " " + + 1 çGROB GOR
+    PICT Vtpu (-0.5,-0.08) + "V¯:" Vph " " + + 1 çGROB GOR
+    PICT Eapu ABS í COS * 1 - 2 / 1 + Eapu ABS í SIN 2 / * RçC
+    (+0.05,0) + "jXsIa:" i Xspu * Iapu * " " + + 1 çGROB GOR
+    PICTURE
+    END
+    ª
+  
+   AJT
+   ´ EIEL
+   "Generador SÌncrono"
+   {
+   { "1.- Ajustar fe" 1}
+   { "2.- AÒadir Carga" 2 }
+   }
+   1
+   CHOOSE
+   IF THEN 'OPC' STO
+   da EVAL pc OBJç DROP2
+    ç éXs éRa éPcore éPfw éVbase éSbase éfp éfe éP
+     ´
+       CASE
+       OPC 1 == THEN AJTF END
+       OPC 2 == THEN ZPARL END
+       END
+     ª
+   END
+   'da' PURGE
+   ª
+   
+   AJTF
+   ´ EIEL
+   "Ajuste a Plena Carga"
+   {
+   { "1.- 60ç50 Hz" 1 }
+   { "2.- 50ç60 Hz" 2 }
+   }
+   1
+   CHOOSE DROP 'OPC' STO
+   "Nuevos V.N"
+       IF OPC 1 ==
+       THEN
+       pc 1 GET 5 6 / *  pc 2 GET 5 6 / *
+       ELSE
+       pc 1 GET 6 5 / *  pc 2 GET 6 5 / *
+       END
+    ç éVbase éSbase
+      ´
+      @ C·lculo de nuevos valores nominales
+      éVbase 1_V * "Vnom" çTAG éSbase 1_VA * "Snom" çTAG
+      Xspu 5 6 / * Zbase * 1_ù * "Xs" çTAG DUP
+      @Nueva Zbase
+      éVbase SQ éSbase / DUP 'Zbase' STO / UVAL 'Xspu' STO
+      @ C·lculo de Ibase
+       IF éfp 0 >
+       THEN éSbase 3 É éVbase * / çNUM 'Ibase' STO éfp ABS 
+       ACOS 1_∞ * 'å' STO
+       ELSE éSbase 3 É éVbase * / çNUM 'Ibase' STO éfp ABS
+       ACOS 1_∞ * NEG 'å' STO
+       END
+      Ibase 1_A * "Inom" çTAG
+      SOLP
+      ª
+    ª   
+
+   ZPARL
+   ´"Indicar Z AÒadida"
+   {
+   { "Zparl" "Impedancia que se conectar· en paralelo (ù)"  }
+   { "Y-D" "Ingrese 1 para Y, 2 para Delta"  }
+   }
+   { 2 0 }
+   { }
+   { (20 Ä 30) 2 }
+   INFORM
+   IF THEN 'DATA2' STO
+   @C·lculos
+   DATA2 1 GET 3 / Zbase / INV Zlpu INV + INV DUP 'Zlpu' STO DUP ARG 'å' STO
+   Rapu i Xspu * + + Eapum / INV ABS DUP å NEG COS * SWAP å NEG SIN * RçC
+   'Iapu' STO
+   Zlpu Iapu * ABS 'Vtpu' STO
+   Vtpu Rapu Xspu i * + Iapu * + ARG 'í' STO
+   Eapum DUP í COS * SWAP í SIN * RçC 'Eapu' STO
+   @SOL
+   "SoluciÛn C ||"
+   Zlpu "Zl" çTAG
+   Eapu "Ea" çTAG DUP 3 É / ABS pc 1 GET * 1_V * çNUM "Ea" çTAG
+   Eapu ABS 1 - 100 * "RV" çTAG Iapu "Ia" çTAG
+   Vtpu pc 1 GET * 1_V * "Vt" çTAG SWAP
+   SOL
+   END
+   ª   
+
+   SOLZ
+   ´"Indicar Impedancia Carga"
+   {
+   { "Zl" "Impedancia de carga(ù)"  }
+   { "Y-D" "Ingrese 1 para Y, 2 para Delta"  }
+   }
+   { 2 0 }
+   { }
+   { (20 Ä 30) 2 }
+   INFORM
+   IF THEN 'DATAI' STO
+   { -72 -73 } SF
+   "Ingrese el nuevo Vt en vacÌo"
+   { ":VtOC:" { 0 0 } }
+   INPUT OBJç pc 1 GET / 'Eapum' STO
+   @C·lculo de Zlpu
+   DATAI 1 GET DUP ARG '¯' STO 3 / Zbase / 'Zlpu' STO
+      CASE
+      DATAI 2 GET 2 == THEN
+      Zlpu Xspu i * Rapu + + ABS
+      Eapum / INV DUP ¯ NEG COS * SWAP ¯ NEG SIN * RçC 'Iapu' STO END
+      DATAI 1 GET Zbase / Xspu i * Rapu + + ABS Eapum / INV 'Iapu' STO
+      END
+   @ SOLUCION
+   "SoluciÛn ZLoad._"
+   Zlpu "Zload" çTAG
+   i Xspu * Zlpu + Rapu + Iapu * ARG 'í' STO Eapum
+   DUP í COS * SWAP í SIN * RçC 'Eapu' STO
+   Eapu "Ea" çTAG DUP ABS 1 - 100 * "RV" çTAG
+   Eapu ABS éVbase * 3 É / çNUM 1_V * "Ea" çTAG
+   Eapu éVbase * 3 É / 'Eaph' STO
+   Iapu "Ia" çTAG
+   Zlpu Iapu * ABS DUP 'Vtpu' STO éVbase * DUP 3 É / 'Vph' STO
+   1_V * "Vt" çTAG
+   SOL
+   END
+   ª 
+   
+   SOLP
+   ´
+   1 'ct' STO
+   "         SOLUCI”N          "
+   å COS å SIN RçC
+    IF zx 1 == THEN
+    fc *
+    END
+   'Iapu' STO
+    IF pc 6 GET 2 == THEN
+    Xspu 3 / 'Xspu' STO Rapu 3 / 'Rapu' STO
+    END
+   Iapu i Xspu * Rapu + * 1 + çNUM DUP 'Eapu' STO
+   "Ea pu" çTAG DUP ABS 1 - 100 * "%RV" çTAG Eapu ARG 'í' STO
+    IF pc 6 GET 1 == THEN
+    Eapu éVbase * 3 É / çNUM DUP 'Eaph' STO ABS 1_V * "Ea¯" çTAG
+    DUP 3 É * çNUM "VtOC" çTAG Vtpu éVbase * 1_V * 3 É / 'Vph' STO
+    ELSE
+    Eapu éVbase * çNUM DUP 'Eaph' STO ABS 1_V * "Ea¯" çTAG
+    Vtpu éVbase * 1_V * 'Vph' STO
+    "VtOC=Ea"
+    END
+   Vtpu éVbase * 1_V *  'VtLoad' çTAG
+   SOL
+   ª
+   
+   SOL
+   ´{-105 -2 -3} SF
+   @ Pin
+    IF Iapu ABS 1 == THEN
+    éSbase éfp ABS * 1_W * 'Pout' STO
+    ELSE
+    Vtpu Iapu ABS * éfp ABS * éSbase * 1_W * 'Pout' STO
+    END
+   Iapu ABS SQ Rapu * éSbase * çNUM 1_W * 'Pcu' STO
+    IF éPfw 0 == éPcore 0 == AND THEN
+    ELSE
+    éPfw éPcore + 1_W * Pcu Pout + + 'Pin' STO Pin "Pin" çTAG DUP UVAL
+    Pout / INV 100 * UVAL 'î' STO î "%î" çTAG
+    Pin 2 á * éfe 120 * éP / * 60 / / çNUM UVAL 1_N 1_m * * 'ôapp' STO
+    ôapp "ôapp" çTAG
+    END
+   Pout Pcu + 2 á * éfe 120 * éP / * 60 / / çNUM UVAL 1_N 1_m * *
+   'ôind' STO ôind "ôind" çTAG
+   @ M·x Pout
+   Eapu Xspu / ABS éSbase * 1_W * "MaxPout" çTAG
+    IF ct 1 == THEN
+    @ M¡XIMO CALENTAMIENTO DEL ROTOR
+    "           M.C.R.           "
+    Eapu ABS Xspu / çNUM DUP 'MCRr' STO "r" çTAG
+    0 Xspu INV NEG çNUM RçC DUP 'MCRc' STO "Centro" çTAG
+    END
+   @ Delta m·x í=90∞
+   "      DELTA MAX. í=90∞      "
+   Eapu ABS éVbase * 3 É / 0 çNUM SWAP çNUM RçC éVbase 3 É / NEG + Rapu Xspu i *
+   + Zbase * / "Iam·x" çTAG DUP DUP ABS SWAP ARG NEG SIN 3 éVbase 3 É / * * *
+   1_Var * "Q" çTAG
+   @ Delta opt í=60∞
+   "      DELTA OPT. í=60∞     "
+   Eapu ABS éVbase * 3 É / DUP 60 COS * çNUM SWAP 60 SIN * çNUM
+   RçC éVbase 3 É / NEG + Rapu Xspu i * + Zbase *
+   / "Iam·x" çTAG DUP DUP ABS SWAP ARG NEG SIN 3 éVbase 3 É / * * *
+   1_Var * "Q" çTAG
+   ª
+
+   MSOL
+   ´ EIEL
+   "SoluciÛn para:"
+   {
+   { "1.- Plena Carga" 1}
+   { "2.- Frac. Carga " 2 }
+   { "3.- Impedancia dada " 3 }
+   }
+   1
+   CHOOSE IF THEN 'OPC' STO
+   'da' CKVR   
+   "Datos Adicionales"
+   {
+   { "Xs" "Reactancia de sincronismo (ù)"  }
+   { "Ra" "Resistencia de armadura (ù)"  }
+   { "Pcore" "PÈrdidas en el n˙cleo (W)"  }
+   { "Pfw" "PÈrdidas Rotacionales (W)"  }
+   }
+   1
+   { 3.4966 0.0021 0 0 }
+   da   
+   INFORM
+   IF THEN DUP 'da' STO EVAL pc OBJç DROP2
+    ç éXs éRa éPcore éPfw éVbase éSbase éfp éfe éP
+      ´
+      @ C·lculo de Ibase
+      éSbase 3 É éVbase * / çNUM 'Ibase' STO éfp ABS ACOS 1_∞ *
+       IF éfp 0 > THEN
+       'å' STO
+       ELSE
+       NEG 'å' STO
+       END
+       @ C·lculo de Zbase, Xspu y Rapu
+       éVbase 2 ^ éSbase / çNUM 'Zbase' STO éXs Zbase / 'Xspu' STO
+       éRa Zbase / 'Rapu' STO
+       CASE
+       OPC 1 == THEN 1 'Zlpu' STO 1 'Vtpu' STO SOLP END
+       OPC 2 == THEN 1 'Vtpu' STO SOLF END
+       OPC 3 == THEN SOLZ END
+       END
+      ª
+   ELSE
+   END
+   ERASE
+   END
+   ª 
+
+MINFORM
+´
+"PARES DE DATOS"
+{
+{}
+{ "N:" "NUMERO TOTAL DE PARES ORDENADOS"  }
+{ "Vfase o Voltaje en terminales" "1 si ingresaste V¯, 2 si Vt"  }
+}
+1
+{ }
+{ }
+INFORM
+IF THEN
+EVAL 'vft' STO DUP 'n' STO 4 / DUP IP 'ni' STO FP 'ni2' STO
+n 4 / CEIL 'l' STO 0 'ct' STO
+{} @LISTA PARA ALMACENAR TODOS LOS DATOS
+  1 l FOR x
+"
+
+
+
+
+
+
+PROCESANDO...." 1 DISP
+  "TITULO DE PRUEBA" {} @ LISTA PARA LOS CAMPOS
+  0 'cl'  STO
+    IF x ni â THEN
+      ct 1 + ct 4 + FOR y
+      0 + 0 +
+      2 cl * 1 + 1 çLIST "If" y RçI + ":" + "CORRIENTE DE CAMPO" 0 3 çLIST PUT
+      2 cl * 2 + 1 çLIST "V" y RçI + ":" + "VOLTAJE INTERNO GEN." 0 3 çLIST PUT
+      'ct' 1 STO+ 'cl' 1 STO+
+      NEXT
+    ELSE
+      ct 1 + ct ni2 4 * + FOR y
+      0 + 0 +
+      2 cl * 1 + 1 çLIST "If" y RçI + ":" + "COORD. HORIZONTAL" 0 3 çLIST PUT
+      2 cl * 2 + 1 çLIST "V" y RçI + ":" + "COORD. VERTICAL" 0 3 çLIST PUT
+      'ct' 1 STO+ 'cl' 1 STO+
+      NEXT
+    END
+  2 {} {} INFORM
+    IF THEN DUP SIZE
+      ç l n
+      ´
+      1 n FOR z
+      l z GET NOVAL SAME
+      NEXT
+      n çLIST ÖLIST
+        IF 1 ä THEN DROP
+        "Datos incorrectos" DOERR KILL
+        ELSE
+        l +
+        END
+      ª
+    ELSE DROP
+    "Has cancelado el programa" DOERR KILL END
+  NEXT
+EVAL {n 2} çARRY DUP 'ÖDAT' STO [['If' 'V']] 1 ROW+ 0 çGROB
+"DATOS RECIBIDOS" 0 çGROB SWAP GROBADD SCROLL
+{ n ni ni2 cl ct l vf } PURGE
+ELSE
+INICIARGESIN
+END
+ª
+
+POLI
+´ TRN AXL EVAL ´ ÖLIST ª 0
+ç m x y ÖL m1
+     ´
+     m 1 + 'm1' STO
+     'ÖL(y)' EVAL
+       1 m FOR j
+       'ÖL(x^j*y)' EVAL
+       NEXT
+     {m1 1} çARRY
+     x SIZE
+       1 m FOR k
+       'ÖL(x^k)' EVAL
+       NEXT
+       m1 m 2 * FOR q
+       m DUPN
+       'ÖL(x^q)' EVAL
+       NEXT
+     {m1 m1} çARRY / 1
+       1 m FOR s
+       'X' s ^
+       NEXT
+     {1 m1} çARRY SWAP * 1 GET
+     ª
+ª
+        
+   ENS  
+   ´ {-3 -2} CF {-105} SF
+   RAD
+   @{ [[0 0] [10 960] [20 1920] [30 2800] [40 3440] [60 4220] [80 4600]
+   @[100 4800]] 2}
+   MINFORM
+   DO
+   "VERIFICACI”N DE DATOS"
+   {
+   {"1.- OK" 1 }
+   {"2.- VOLVER" 2}
+   }
+   1 CHOOSE IF THEN 'OPC' STO
+   ELSE
+   3 'OPC' STO
+   END
+   IF OPC 2 == THEN
+   1 'OPC' STO MINFORM
+   END
+   UNTIL OPC 1 == END 'OPC' PURGE   
+   4 ÖDAT DUP 'A' STO SCATRPLOT DRAX POLI 'OCC' STO
+   ÖDAT {1 1} {2 2} SUB 'ÖDAT' STO LINFIT ÖLINE 'OCCEXT' STO
+   OCCEXT STEQ FUNCTION DRAW PICTURE
+   OCC STEQ FUNCTION DRAW PICTURE
+   "Ensayo de Corto Circuito"
+   {
+   { "If1:" "Primera medida de If_A"  }
+   { "Ia1:" "Ia correspondiente a la If anterior_A"  }
+   { "If2:" "Segunda medida de If_A"  }
+   { "Ia2:" "Ia correspondiente a la If anterior_A"  }
+   }
+   1
+   { }
+   { 10 232 20 464 }
+   INFORM
+   IF THEN EVAL {2 2} çARRY 'ÖDAT' STO SCATRPLOT
+   LINFIT ÖLINE 'SCC' STO -3 CF SCC STEQ FUNCTION DRAW PICTURE
+   pc 1 GET IF pc 6 GET 1 == vft 1 == AND THEN 3 É / END DUP 'C' STO
+   OCCEXT = 'X' ISOL DEFINE 'IfNS' 'X' RENAME
+   A 2 COL- 1 COL+ 'ÖDAT' STO 5 ÖDAT
+   POLI {X} C + | çNUM 'IfSAT' STO
+   C SCC {X} IfNS + | / çNUM 'XsNS' STO
+   C SCC {X} IfSAT + | / çNUM 'XsSAT' STO
+   IfSAT pc 2 GET 3 É pc 1 GET * / SCC = 'X' ISOL OBJç DROP2 SWAP DROP /
+   'SCR' STO
+   EIEL
+"  RESULTADOS  "
+"
+" XsNS 1_ù * "XsNS" çTAG +
+"
+" XsSAT 1_ù * "XsSAT" çTAG +
++ + MSGBOX
+  END
+   { Ea vtf XsNS SCR IfSAT IfNS EQ A C }  PURGE
+   ª
+   
+   MC
+   ´
+   EIEL
+   "Curvas Especiales"
+   {
+   { "1.-Curva en V @ P=cte" 1 }
+   { "2.-RV Vt-carga @ fp=cte" 2 }
+   }
+   1
+   CHOOSE IF THEN 'OPC' STO
+     CASE
+     OPC 1 == THEN CV END
+     OPC 2 == THEN CUREG END
+     END
+   END
+   ª
+
+   SOLF  
+   ´
+   1 'zx' STO "Ingrese la fracciÛn de carga"
+   { ":Ia/Inom:" { 0 0 } }
+   INPUT OBJç 'fc' STO SOLP
+   ª
+
+   EIEL  
+   ´
+{ -72 } CF
+"LUZEIELUZEIELUZE
+IELUZEIELUZEIELUZ
+EIELUZEIELUZEIEL
+UZEIELUZEIELUZEIE
+LUZEIELUZEIELUZE
+IELUZEIELUZEIELUZ
+EIELUZEIELUZEIEL
+UZEIELUZEIELUZEIE
+LUZEIELUZEIELUZE"
+0 DISP{ -72 } CF
+   ª
+
+   CUREG
+   ´ RECT 1 'LB' STO
+   Xspu Zbase *
+   pc 1 GET pc 2 GET pc 3 GET ABS
+   Rapu Zbase *
+    ç XS VTN SN FPP RA
+     ´
+     VTN 'EA' STO
+     FPP ACOS 'T' STO
+     'SN/((É3)*VTN)' çNUM 'IAN' STO
+     '%Sn' 'FPn' 'FPp' 'FPu'
+     1 'SUM' STO CLLCD ERASE
+     0 IAN FOR IA
+     'SUM+1' çNUM 'SUM' STO
+     IA IAN / 100 *
+'É((EA^2)-(((XS*IA*COS(T))-(RA*IA*SIN(T)))^2))-(RA*IA*COS(T))-(XS*IA*SIN(T))' çNUM
+'É((EA^2)-(((XS*IA*COS(T))+(RA*IA*SIN(T)))^2))-(RA*IA*COS(T))+(XS*IA*SIN(T))' çNUM
+'É((EA^2)-((XS*IA)^2))' çNUM 3 DUPN 3 çARRY HALT TEXT 1 DISP
+     IAN 0.1 * STEP
+     {SUM 4} çARRY
+     {-3} CF
+     DUP 'A' STO A çCOL DROP2 DROP  AUGMENT TRN 1 ROW- DROP DUP SIZE OBJç DROP2 DUP
+     IF 12 == THEN DROP ELSE ROW- DROP END 5 "REGULACI”N INDUCTIVA.." 
+     1 DISP CURV DROP A çCOL DROP SWAP DROP SWAP DROP AUGMENT TRN 1
+     ROW- DROP DUP SIZE OBJç DROP2 DUP
+     IF 12 == THEN DROP ELSE ROW- DROP END 5 "REGULACI”N RESISTIVA.."
+     1 DISP CURV DROP A çCOL DROP2 SWAP DROP  AUGMENT TRN 1
+     ROW- DROP DUP SIZE OBJç DROP2 DUP
+     IF 12 == THEN DROP ELSE ROW- DROP END 5 "REGULACI”N CAPACITIVA.."
+     1 DISP CURV DROP
+     ª
+   {SUM EA T IAN} PURGE 2 FIX 0 çGROB SCROLL
+   ª
+
+ CKDR
+    ´ 'GESIN~TEMP'
+    DUP HOME 15 TVARS SWAP POS
+      IF
+      THEN EVAL
+      ELSE DUP CRDIR EVAL
+      END
+    ª
+
+ CKVR
+   ´ DUP VARS SWAP POS
+     IF
+     THEN DROP
+     ELSE { } SWAP STO
+     END
+   ª   
+
+      MyExt
+    ´ IF DUP 0 R~SB ==
+      THEN SWAP
+     { { "VI. Gen SÌncronos"
+      ´ INICIARGESIN
+      ª } }
+        + SWAP
+      END
+    ª
+        
+  $ROMID
+    1605  
+
+  $CONFIG
+    ´ 1605 ATTACH ª  
+
+  $TITLE
+    "GESIN
+Generadores SÌncronos lib    
+Author: Luis RodrÌguez     
+Calc: HP 50G
+Version: 1.1"
+
+  $VISIBLE
+    { INICIARGESIN ABOUTGESIN } 
+
+  $HIDDEN
+    { CURV CKDR CKVR CLN PC CCAP DFAS CV AJT AJTF
+ZPARL SOLZ SOLP SOL SOLF POLI MSOL ENS MC CUREG EIEL MINFORM MyExt }         @ { hidden identifiers ...  } @
+
+  $EXTPRG
+  'MyExt'
+END
+
+HOME 'CURSO' PGDIR 'CURSO' STO 
+CURSO CRLIB HOME 'CURSO' PGDIR

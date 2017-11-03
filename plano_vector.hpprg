@@ -1,0 +1,18 @@
+%%HP: T(0)A(D)F(.);
+@ Argumentos:
+@ Autor:
+@ E-mail:
+@ VersiÛn:
+@ Creado con HPUserEdit 6
+
+@ %NAME%=
+@ %DIR%=
+
+´"Ingrese el vector normal"
+{ ":N:[]" { 1 0 } V }
+INPUT OBJç
+"Ingrese el punto del plano"
+{ ":Po:[]" { 1 0 } V }
+INPUT OBJç 
+['x' 'y' 'z'] SWAP - DOT 0 = EXPAND
+ª

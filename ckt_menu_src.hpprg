@@ -1,0 +1,129 @@
+%%HP: T(0)A(D)F(.);
+@ Argumentos:
+@ Autor:
+@ E-mail:
+@ VersiÛn:
+@ Creado con HPUserEdit 6
+
+DIR
+
+  CIRSM
+  ´ {-19 } SF RCLMENU 'MenuAct' STO  
+  {
+  {
+  GROB 21 8 3000811FEE1180112048A24048A24068A2C0101101300081
+  ´ IFERR NEG 0 SWAP RçC THEN "Xl debe estar en el nivel 1" DOERR END ª
+  }
+  {
+  GROB 21 8 30008110220100210000A000FFBFF000A000102101302281
+  ´ IFERR 0 SWAP RçC THEN DROP "Xc debe estar en el nivel 1" DOERR END ª
+  }
+  {
+  GROB 21 8 3000811EFF11020010020010F300F10200101EFF11300081
+  ´ IFERR çV2 THEN 
+"2:R        MODO:XYZ
+1:X         ç (X,Y)
+-----------≠≠------
+2:|Z|      MODO:RÄZ
+1:ÿ         ç (ZÄÿ)" DOERR END ª }
+  {"RéçP"
+  ´ {-15 -17 -18} CF -16 FS?
+  IF THEN -16 CF ELSE -16 SF END
+  ª
+  }
+  {"Yçõ" ´ IFERR ç ya yb yc
+    ´
+    ya yb * ya yb yc + + / SIMPLIFY "y_ab" çTAG
+    yb yc * ya yb yc + + / SIMPLIFY "y_bc" çTAG
+    yc ya * ya yb yc + + / SIMPLIFY "y_ac" çTAG
+    ª THEN 
+"3:ya
+2:yb
+1:yc" DOERR END ª }
+  {"õçY" ´ IFERR 3 çLIST INV EVAL
+  ç Zab Zbc Zca
+    ´
+    Zab Zca * Zab Zca + Zbc + / INV SIMPLIFY "y_a" çTAG
+    Zbc Zab * Zab Zca + Zbc + / INV SIMPLIFY "y_b" çTAG
+    Zca Zbc * Zab Zca + Zbc + / INV SIMPLIFY "y_c" çTAG
+    ª THEN DROP
+"3:yab
+2:ybc
+1:yca" DOERR END ª }
+  {"DDC" 
+    ´ IFERR
+     -3 SF AXL ç In R
+      ´ {}
+        1 R AXL SIZE FOR z
+        R z COL- DROP AXL INV IFERR ÖLIST THEN EVAL END 
+        INV DUP R z GET + / +
+        NEXT
+      In * 4 RND "I" çTAG
+      R AXL INV IFERR ÖLIST THEN EVAL END INV In * 4 RND "Vload" çTAG
+      ª -3 CF
+      THEN
+"2:In [A]
+1:{R1 R2...Rn} [ù]" DOERR 
+      END 
+    ª 
+  }
+  {"DDV" 
+  ´ IFERR  -3 SF ç Vth R
+    ´
+    R DUP ÖLIST / Vth * 4 RND "V" çTAG
+    Vth R ÖLIST / "Iload" çTAG
+    ª
+  -3 CF THEN
+"2:Vth [V]
+1:{R1 R2...Rn} [ù]" DOERR END 
+  ª 
+  }
+  { "PRLL" ´ -3 SF INV ÖLIST INV 4 RND "Req" çTAG -3 CF ª}  
+  {"ê" ´ MenuAct TMENU 'MenuAct' PURGE ª}} MENU ª
+
+  fÜs
+  ´ {-19 } SF RCLMENU 'MenuAct' STO
+  {
+  { "ILAP" ´ -3 SF DEG DUP2 'den' STO 'num' STO 1494 22 XLIB~ EVAL EVAL
+  'D' STO 'N' STO -3 CF
+    1 D SIZE FOR s
+    "A" s RçI + OBJç D s GET NEG 'S' SWAP + /
+  NEXT
+  D SIZE çLIST
+    1 N SIZE FOR s
+    "A" s RçI + OBJç N s GET =
+    NEXT    
+    N SIZE çLIST SWAP AXL 1 ROWç SWAP AXL 1 ROWç 2 ROW+ N 4 TRNC 
+  AXL 1 ROWç
+  3 ROW+ num den  1494 25 XLIB~ EVAL
+  "TRANSFORMADA INVERSA:" SWAP 3 çLIST 1
+  ´ 0 çGROB
+  ª DOLIST { num den D N } PURGE EVAL GROBADD GROBADD SCROLL ª}
+  {"ê" ´ MenuAct TMENU 'MenuAct' PURGE ª}} MENU ª  
+  
+  ABOUTCIRSM
+    obj2
+
+
+  $CONFIG
+    ´ 1603 ATTACH ª
+
+  $HIDDEN
+    { }   
+
+  $VISIBLE
+    { CIRSM fÜs ABOUTCIRSM }  
+
+  $ROMID
+    1603
+
+  $TITLE
+    "CIRSM: Circuitos Soft Menu
+     Author: Luis JosÈ RodrÌguez
+     Calc: 49G, 49G+, 50G
+     Version: Alpha 1" 
+END
+
+HOME 'dirTemp' PGDIR
+'dirTemp' STO
+dirTemp CRLIB

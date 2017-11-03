@@ -1,0 +1,194 @@
+%%HP: T(0)A(D)F(.);
+@ %NAME%=LISTP
+
+DIR
+
+@ REMUEVE DUPLICADOS
+  RDUPS
+    ´
+    LISTç { } 1 ROT 
+      START 
+      SWAP 
+        IF DUP2 POS 
+        THEN DROP
+        ELSE + 
+        END 
+      NEXT 
+    REVLIST
+    ª
+  
+@ DESORDENA UNA LISTA  
+  RANL  
+    ´
+    LISTç 
+    ç t 
+      ´ 1 t 
+        FOR n 
+        n RAND * CEIL ROLLD 
+        NEXT 
+      t çLIST  
+      ª 
+    ª
+  
+@ ESPERA UNA LISTA Y UNA POSICI”N PARA REMOVER  
+  REL  
+    ´ 
+    SWAP LISTç 2 + DUP ROLL OVER
+    SWAP - ROLL DROP 3 - çLIST  
+    ª 
+  
+@ ESPERA UNA LISTA Y DOS POSICIONES INICIAL Y FINAL.
+@ SE REMOVER¡N TODOS LOS NUMEROS ENTRE ESAS POSICIONES  
+  RSL
+    ´ 
+    3 DUPN DROP 1 - 1 SWAP SUB 4 
+    ROLLD SWAP DROP 1 + OVER SIZE SUB + 
+    ª 
+  
+@ INTERCAMBIA DOS POSICIONES  
+  ETP
+    ´
+    ROT DUP 4 DUPN DROP ROT GET PUT 4 
+    ROLLD SWAP GET PUT 
+    ª
+  
+@ ROTA UNA POSICI”N HACIA LA DERECHA
+  RR1  
+    ´ 
+    LISTç ROLLD LASTARG çLIST 
+    ª
+    
+@ ROTA UNA POSICI”N HACIA LA IZQUIERDA
+  RL1
+    ´ 
+    LISTç ROLL LASTARG çLIST 
+    ª 
+  
+@ ROTA N POSICIONES HACIA LA DERECHA  
+  RRN
+    ´ 
+    SWAP LISTç DUP 2 + ROLL 1 - OVER 
+    MOD 1 + 1 SWAP 
+      START 
+      ROLLD LASTARG 
+      NEXT 
+    çLIST 
+    ª
+  
+@ ROTA N POSICIONES HACIA LA IZQUIERDA
+  RLN
+    ´ 
+    1 + OVER SIZE SUB LASTARG 
+    DROP 1 - 1 SWAP SUB + 
+    ª  
+   
+@ CREAR LISTA CON CEROS
+  LN0
+    ´ 
+    1 çLIST 0 CON ARRYç EVAL çLIST 
+    ª 
+    
+@ PROMEDIO DE UNA LISTA
+  LA
+    ´ 
+    ÖLIST LASTARG SIZE / 
+    ª
+
+@ PORCENTAJE DE ELEMENTOS RESPECTO AL TOTAL  
+  L%
+    ´ 
+    ÖLIST LASTARG %T 3 RND
+    ª 
+  
+  LM  
+    ´ 
+    SORT DUP SIZE 1 + 2 / GET LASTARG
+    FLOOR GET + 2 / 
+    ª
+  
+@ ESPERA UNA LISTA, UNA POSICION Y EL NUEVO ELEMENTO
+@ A COLOCAR EN LA LISTA 
+  RPL
+    ´
+    ç p r 
+      ´ LISTç 
+      ç t 
+        ´ t 1 + p - ROLL LASTARG 
+        r SWAP ROT DROP ROLLD t çLIST 
+        ª
+      ª
+    ª
+  
+@ ENTREGA EL VALOR MIN DE LA LISTA 
+  RLV  
+    ´ 
+    LISTç 2 SWAP 
+      START 
+      MIN 
+      NEXT 
+    ª 
+  
+@ LISTA, POSICION, Y ELEMENTO A INSERTAR   
+  IEL
+    ´ 
+    ç p e 
+      ´ 
+      LISTç 
+      ç t 
+        ´ 
+        e t 2 + p - ROLLD
+        t 1 + çLIST 
+        ª 
+      ª
+    ª
+  
+@ CREA UNA LISTA DE 1 A N  
+  MLN 
+    ´ 
+    1 SWAP 
+      FOR n 
+      n 
+      NEXT 
+    DUP çLIST 
+    ª 
+  
+@ CREA UNA LISTA DE A....Z
+  MLA
+    ´ 
+    ç n
+      ´ 
+      { A B C D E F G H I J K L M N O P Q R S T V U W X Y Z }
+      1 n 26 / CEIL LN 2 LN / CEIL 
+        START 
+        DUP + 
+        NEXT
+      1 n SUB 
+      ª  
+    ª
+  
+@ ETIQUETA A LOS ELEMENTOS CON SUS POSICIONES  
+  TAGL
+    ´ 
+    1 OVER SIZE 
+      FOR n 
+      DUP n GET n RçI çTAG n SWAP PUT 
+      NEXT  
+    ª
+           
+  $CONFIG
+    ´ 608 ATTACH ª 
+    
+  $HIDDEN
+    { }            
+
+  $VISIBLE
+    { RDUPS RANL REL RSL ETP RR1 RL1 RRN RLN LN0 
+    LA L% LM RPL RLV IEL MLN MLA TAGL }  
+
+  $ROMID
+    608    
+
+  $TITLE
+    "LISTP"                       
+    
+END
